@@ -5,7 +5,10 @@ list definie par list : [begin:end]
 
 completer les different print avec la sortie souhaiter
 """
+'''
+semia, 
 
+'''
 planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn']
 print() #afficher ==> ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn']
 print() # afficher la taille de list : 6   utiliser la fonction len pour savoir la taille du list ex: len([1,2,0]) = 3
@@ -28,9 +31,8 @@ exemple : a = ['1','2','3','4','6']
 pour afficher  ['1','3','6'] ===> a[::2] 
 explanation -----0--0+2--0+2+2------
 -----------------0---2----4----------
-
-
 """
+
 letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
 print() #afficher ==> ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
 print() #afficher ==> ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
