@@ -11,7 +11,8 @@ class Solution:
         for idx in s :
             if idx in '([{':
                 stack.append(idx)
-            elif len(stack) == 0 or idx
+            elif len(stack) == 0 or idx:
+                print('')
 
 
 if __name__=='__main__':
