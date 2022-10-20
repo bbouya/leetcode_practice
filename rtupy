@@ -1,0 +1,33 @@
+
+from pymodbus3.constants import Endian
+from pymodbus3.payload import BinaryPayloadDecoder
+from pymodbus3.client.sync import ModbusSerialClient as ModbusClient
+import logging
+
+FORMAT = ('%(asctime)-15s %(threadName)-15s '
+          '%(levelname)-8s %(module)-15s:%(lineno)-8s %(message)s')
+logging.basicConfig(format=FORMAT)
+log = logging.getLogger()
+log.setLevel(logging.DEBUG)
+
+UNIT = 0x01
+
+
+def run_sync_client():
+    client = ModbusClient(method='rtu', port='COM6', timeout=1, baudrate=9600, parity='E', stopbits=1, bytesize=8)
+    client.connect()
+
+    request = client.read_holding_registers(address=3010, count=2, unit=UNIT)
+    result = request.registers
+    print(result)
+    decoder = BinaryPayloadDecoder.fromRegisters(result, Endian.Little, wordorder=Endian.Big)
+    #dc2 = (decoder.decode_32bit_float() + 32768 /1000)
+    #print(dc2)
+    print(decoder.decode_32bit_float())
+
+
+    client.close()
+
+
+if __name__ == "__main__":
+    run_sync_client()
