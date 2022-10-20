@@ -3,17 +3,15 @@
 '''
 class Solution:
     def isValid(self, s: str) -> bool:
-        result = False
-        count = -1
-        for i in range(len(s)):
-            if(s[i]=='(' and count ==-1):
-                count = 1
-            elif(s[i]==')' and count == 1):
-                count = 2
-                return True
-            else: continue
+        # Create a pair of opening and closing parrenthesis
+        opcl = dict(('()', '[]', '{}'))
+        #Create stack data structure
+        stack = []
 
-        return False
+        for idx in s :
+            if idx in '([{':
+                stack.append(idx)
+            elif len(stack) == 0 or idx
 
 
 if __name__=='__main__':
